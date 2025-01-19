@@ -21,34 +21,36 @@ km.set("v", "<leader>d", "\"_d", {desc = "Delete to void register"})
 -- disable Q
 km.set("n", "Q", "<nop>")
 
-km.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {desc = "Replace current word in file"})
+km.set("n", "<leader>o", ":%s///gc<Left><Left><Left><Left>", {desc = "Replace current word in file"})
+km.set("v", "<leader>o", ":s///gc<Left><Left><Left><Left>", {desc = "Replace current word in file"})
 
 -- build cmake project
-km.set('n', '<leader>b', function()
-	local current_dir = vim.fn.getcwd()
-	-- This command assumes your project root contains a .git directory
-	local handle = io.popen("git rev-parse --show-toplevel")
-	local project_root = handle:read("*a"):gsub("\n", "")
-	handle:close()
-
-	if project_root == '' then
-		print("Error: Project root not found.")
-		return
-	end
-
-	local build_dir = project_root .. "/build"
-	os.execute("mkdir -p " .. build_dir)
-	os.execute("cd " .. build_dir .. " && cmake " .. project_root .. "> build_output.txt && make > build_output.txt")
-	os.execute("$(find " .. project_root .."/bin -type f -executable | head -n 1)")
-	vim.api.nvim_set_current_dir(current_dir)
-end, {noremap = true, silent = true})
-
+-- Voir pour setup quelque chose de similaire au launch de vscode
+-- km.set('n', '<leader>b', function()
+-- 	local current_dir = vim.fn.getcwd()
+-- 	-- This command assumes your project root contains a .git directory
+-- 	local handle = io.popen("git rev-parse --show-toplevel")
+-- 	local project_root = handle:read("*a"):gsub("\n", "")
+-- 	handle:close()
+--
+-- 	if project_root == '' then
+-- 		print("Error: Project root not found.")
+-- 		return
+-- 	end
+--
+-- 	local build_dir = project_root .. "/build"
+-- 	os.execute("mkdir -p " .. build_dir)
+-- 	os.execute("cd " .. build_dir .. " && cmake " .. project_root .. "> build_output.txt && make > build_output.txt")
+-- 	os.execute("$(find " .. project_root .."/bin -type f -executable | head -n 1)")
+-- 	vim.api.nvim_set_current_dir(current_dir)
+-- end, {noremap = true, silent = true})
+--
 km.set('n', '<leader>w', ':w<CR>', { desc = "Save current buffer"});
 km.set('n', '<leader>q', ':q<CR>', { desc = "Quit current buffer"});
 
 -- window management
-km.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-km.set("n", "<leader>sh", "<C-w>h", { desc = "Split window horizontally" })
+-- km.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
+km.set("n", "<C-w>h", ":sp", { desc = "Split window horizontally" })
 km.set("n", "<C-Left>", "<C-w>h", { desc = "Move to left window" })
 km.set("n", "<C-Right>", "<C-w>l", { desc = "Move to right window" })
 km.set("n", "<C-Up>", "<C-w>k", { desc = "Move to up window" })

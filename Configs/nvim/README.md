@@ -31,6 +31,7 @@ Depending on what you are making, it can be a good idea to include screenshots o
 - [ ] https://github.com/m1chaelwilliams/my-nvim-config
 - [ ] Oil.nvim https://youtu.be/218PFRsvu2o
 - [ ] https://www.youtube.com/playlist?list=PLep05UYkc6wRcB9dxdXkc5tYHlpQFlRUF
+- [ ] Voir pour setup quelque chose de similaire au launch de vscode
 ## Installation
 ### Linux
 ripgrep utilisé par telescope pour pour faire des recherches dans les fichier
@@ -40,7 +41,7 @@ TODO
 - autopairs: {[()]}
 - comment: fonctions pour commenter le code. gcc comment la ligne
 - dressing: ajoute ui pour les inputs l'ui apparaît au niveau du curseur au lieu de la ligne de commande en bas de l'écrans
-- conform.nvim: fonctions pour formatter le code. <leader>mp pour formatter la selection
+- conform.nvi : fonctions pour formatter le code. <leader>mp pour formatter la selection
 - fugitive: intégration git
 - harpoon: navigation rapide entre plusieurs buffer
 - indent-blanklines.nvim: ajoute une line pour marquer l'inedentation

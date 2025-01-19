@@ -22,7 +22,7 @@ return {
 				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
 			}
 
-			vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
+			vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
 			vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
 
 			-- Eval var under cursor
