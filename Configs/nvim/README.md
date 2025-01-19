@@ -23,10 +23,12 @@ Depending on what you are making, it can be a good idea to include screenshots o
 - [x] configurer nvim-cmp https://youtu.be/_DnmphIwnjo?list=TLPQMjcwNDIwMjSFI1W75lJ3WQ
 - [x] configurer lsp https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/lsp.lua
 - [ ] snipset
-    - [ ] configurer mapping luasnip/cmp
+    - [x] configurer mapping luasnip/cmp
     - [ ] créer snipset https://www.youtube.com/watch?v=Dn800rlPIho https://www.youtube.com/watch?v=KtQZRAkgLqo
-- [ ] debbuger setup https://youtu.be/n4Lp4cV8YR0
+- [x] debbuger setup
+- [ ] how to make a plugin https://youtu.be/n4Lp4cV8YR0
 - [ ] keymap cheatsheet
+- [ ] https://github.com/m1chaelwilliams/my-nvim-config
 - [ ] Oil.nvim https://youtu.be/218PFRsvu2o
 - [ ] https://www.youtube.com/playlist?list=PLep05UYkc6wRcB9dxdXkc5tYHlpQFlRUF
 ## Installation
