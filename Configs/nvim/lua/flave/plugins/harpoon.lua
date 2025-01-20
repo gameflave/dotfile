@@ -15,7 +15,7 @@ return {
 		km.set("n", "<leader>s", function() harpoon:list():select(2) end, { desc = "Select second buffer in Harpoon list" })
 		km.set("n", "<leader>r", function() harpoon:list():select(3) end, { desc = "Select third buffer in Harpoon list" })
 		km.set("n", "<leader>n", function() harpoon:list():select(4) end, { desc = "Select fourth buffer in Harpoon list" })
-		km.set("n", "<leader>d", function() harpoon:list():prev() end, { desc = "Select fourth buffer in Harpoon list" })
-		km.set("n", "<leader>'", function() harpoon:list():next() end, { desc = "Select fourth buffer in Harpoon list" })
+		-- km.set("n", "<leader>d", function() harpoon:list():prev() end, { desc = "Select fourth buffer in Harpoon list" })
+		-- km.set("n", "<leader>'", function() harpoon:list():next() end, { desc = "Select fourth buffer in Harpoon list" })
   end
 }

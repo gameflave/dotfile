@@ -26,7 +26,8 @@ autocmd('BufWritePre', {
 vim.filetype.add({
     extension = {
         vert = 'glsl',
-        frag = 'glsl'
+        frag = 'glsl',
+        wgsl= 'glsl',
     },
     pattern = {
         [".*/hypr/.*%.conf"] = "hyprlang"

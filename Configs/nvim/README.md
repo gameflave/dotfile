@@ -21,45 +21,27 @@ Depending on what you are making, it can be a good idea to include screenshots o
 - [x] apprendre à utiliser gitsigns, utiliser vim-fugitive à la place
 - [x] vim-fugitive
 - [x] configurer nvim-cmp https://youtu.be/_DnmphIwnjo?list=TLPQMjcwNDIwMjSFI1W75lJ3WQ
-- [ ] configurer lsp https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/lsp.lua https://www.twitch.tv/tsukiyorokashi
-- [ ] configurer mapping luasnip/cmp
-- [ ] créer snipset https://www.youtube.com/watch?v=Dn800rlPIho https://www.youtube.com/watch?v=KtQZRAkgLqo
+- [x] configurer lsp https://github.com/ThePrimeagen/init.lua/blob/master/lua/theprimeagen/lazy/lsp.lua
 - [ ] snipset
-- [ ] https://youtu.be/n4Lp4cV8YR0
-- [ ] configurer mapping nvim-tree
+    - [x] configurer mapping luasnip/cmp
+    - [ ] créer snipset https://www.youtube.com/watch?v=Dn800rlPIho https://www.youtube.com/watch?v=KtQZRAkgLqo
+- [x] debbuger setup
+- [ ] how to make a plugin https://youtu.be/n4Lp4cV8YR0
 - [ ] keymap cheatsheet
+- [ ] https://github.com/m1chaelwilliams/my-nvim-config
 - [ ] Oil.nvim https://youtu.be/218PFRsvu2o
 - [ ] https://www.youtube.com/playlist?list=PLep05UYkc6wRcB9dxdXkc5tYHlpQFlRUF
+- [ ] Voir pour setup quelque chose de similaire au launch de vscode
 ## Installation
 ### Linux
 ripgrep utilisé par telescope pour pour faire des recherches dans les fichier
 #### Prérequis
-```bash
-# Debian
-sudo apt update && sudo apt upgrade
-sudo apt install git ripgrep
-```
-```bash
-# Fedora
-sudo dnf upgrade
-sudo dnf install -y git ripgrep
-```
-### Installation neovim
-```bash
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-mkdir -p /opt/nvim
-mv nvim.appimage /opt/nvim/nvim
-```
-```bash
-echo "PATH=\"\$PATH:/opt/nvim/\"" >> ~/.bashrc
-export PATH="$PATH:/opt/nvim/"
-```
+TODO
 ## Plugin list
 - autopairs: {[()]}
 - comment: fonctions pour commenter le code. gcc comment la ligne
 - dressing: ajoute ui pour les inputs l'ui apparaît au niveau du curseur au lieu de la ligne de commande en bas de l'écrans
-- conform.nvim: fonctions pour formatter le code. <leader>mp pour formatter la selection
+- conform.nvi : fonctions pour formatter le code. <leader>mp pour formatter la selection
 - fugitive: intégration git
 - harpoon: navigation rapide entre plusieurs buffer
 - indent-blanklines.nvim: ajoute une line pour marquer l'inedentation
