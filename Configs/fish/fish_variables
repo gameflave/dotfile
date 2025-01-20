@@ -1,8 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export C:gcc
 SETUVAR --export CC:clang
 SETUVAR --export CXX:clang\x2b\x2b
 SETUVAR --export GDK_BACKEND:wayland
+SETUVAR --export LIBVIRT_DEFAULT_URI:qemu\x3a///system
 SETUVAR --export QT_IM_MODULE:fcitx
 SETUVAR --export QT_IM_MODULES:wayland\x3bfcitx
 SETUVAR --export SDL_IM_MODULE:fcitx
