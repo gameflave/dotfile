@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_DIR="$(cd "$(dirname "$(cut -d'/' -f-1 "${BASH_SOURCE[0]}")")" && pwd)"
 
 echo "Start linking paths"
 
