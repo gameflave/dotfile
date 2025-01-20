@@ -1,127 +1,137 @@
 {
-	"layer": "top",
-	"position": "top",
+  "layer": "top",
+  "position": "top",
 
-	"modules-left": [
-		"hyprland/workspaces",
-		"custom/right-arrow-dark"
-	],
-	"modules-center": [
-		"custom/left-arrow-dark",
-		"custom/kanji_day",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
-		"clock#3",
-		"custom/right-arrow-dark"
-	],
-	"modules-right": [
-        "custom/left-arrow-dark",
-        "tray",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"pulseaudio",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"memory",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"cpu",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
-		"disk"
-	],
+  "modules-left": ["group/power", "tray"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["group/hardware", "group/clock-colapsed"],
 
-	"custom/left-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistant-workspace": {
+      "*": 5,
+    },
+  },
 
-	"hyprland/workspaces": {
-		"disable-scroll": true,
-		"format": "{name}",
-        "format-icons": {
-            "urgent": "#",
-            "active": "-"
-        }
-	},
+  "group/clock-colapsed": {
+    "orientation": "horizontal",
+    "modules": ["custom/kanji_day", "clock#3", "clock#2"],
+  },
+  "custom/kanji_day": {
+    "exec": "~/.config/waybar/kanji_day.sh short",
+    "interval": 60,
+    "tooltip": false,
+  },
+  "clock#2": {
+    "format": "{:%H:%M}",
+    "tooltip": false,
+  },
+  "clock#3": {
+    "format": "{:%m月-%d日}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "timezones": ["Europe/Paris", "Asia/Tokyo"],
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click": "mode",
+      "on-click-right": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
 
-	"custom/kanji_day": {
-        "exec": "~/.config/waybar/kanji_day.sh",
-        "interval": 60,
-        "tooltip": false
-	},
-	"clock#2": {
-		"format": "{:%H:%M}",
-		"tooltip": false
-	},
-	"clock#3": {
-		"format": "{:%m月-%d日}",
-		"tooltip": true
-	},
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "cpu",
+      "memory",
+      "network",
+      "bluetooth",
+      "battery",
+    ],
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume:2}%",
+    "format-bluetooth": "{icon}  {volume}%",
+    "format-muted": "MUTE",
+    "format-icons": {
+      "headphones": "",
+      "default": ["", ""],
+    },
+    "scroll-step": 5,
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+  },
+  "memory": {
+    "interval": 5,
+    "format": "Mem {}%",
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "CPU {usage:2}%",
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "disk": {
+    "interval": 5,
+    "format": "Disk {percentage_used:2}%",
+    "path": "/",
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 5,
+  },
+  "bluetooth": {},
 
-	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "MUTE",
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				""
-			]
-		},
-		"scroll-step": 5,
-		"on-click": "pamixer -t",
-		"on-click-right": "pavucontrol"
-	},
-	"memory": {
-		"interval": 5,
-		"format": "Mem {}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "CPU {usage:2}%"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	"disk": {
-		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
-		"path": "/"
-	},
-	"tray": {
-		"icon-size": 20,
-        "spacing": 5
-	}
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": true,
+    },
+    "modules": [
+      "custom/power", // First element is the "group leader" and won't ever be hidden
+      "custom/reboot",
+      "custom/quit",
+      "custom/lock",
+    ],
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit",
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "",
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot",
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now",
+  },
 }
