@@ -37,7 +37,14 @@ return {
 			vim.keymap.set("n", "<F5>", dap.step_back)
 			vim.keymap.set("n", "<F13>", dap.restart)
 
-			vim.fn.sign_define('DapBreakpoint', {text='', texthl='ErrorMsg', linehl='', numhl=''})
+			vim.diagnostic.config({
+        signs = {
+          text={''},
+          texthl='ErrorMsg',
+          linehl=nil,
+          numhl=nil,
+        }
+      })
 
 			dap.configurations.c = {
 				{
