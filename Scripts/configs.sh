@@ -16,6 +16,7 @@ for file in "$DOTFILES_DIR/Configs"/*; do
         echo "  Processing: $CONFIG_DIR"
 
         if [ -e  "$CONFIG_DIR" ]; then
+            mkdir -p "$DOTFILES_DIR/Backups/config/"
             mv $CONFIG_DIR "$DOTFILES_DIR/Backups/config/"
         fi
 
