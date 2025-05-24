@@ -34,16 +34,17 @@ vim.filetype.add({
     },
 })
 
-vim.g.clipboard = {
-  name = 'wslclipboard',
-  copy = {
-    ['+'] = 'clip.exe',
-    ['*'] = 'clip.exe',
-  },
-  paste = {
-    ['+'] = 'powershell.exe -nologo -noprofile -c [console]::out.write($(get-clipboard -raw).tostring().replace("`r", ""))',
-    ['*'] = 'powershell.exe -nologo -noprofile -c [console]::out.write($(get-clipboard -raw).tostring().replace("`r", ""))',
-  },
-  cache_enabled = true,
-}
+-- wsl clipboard
+-- vim.g.clipboard = {
+--   name = 'wslclipboard',
+--   copy = {
+--     ['+'] = 'clip.exe',
+--     ['*'] = 'clip.exe',
+--   },
+--   paste = {
+--     ['+'] = 'powershell.exe -nologo -noprofile -c [console]::out.write($(get-clipboard -raw).tostring().replace("`r", ""))',
+--     ['*'] = 'powershell.exe -nologo -noprofile -c [console]::out.write($(get-clipboard -raw).tostring().replace("`r", ""))',
+--   },
+--   cache_enabled = true,
+-- }
 
