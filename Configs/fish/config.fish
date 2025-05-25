@@ -1,3 +1,4 @@
+# FIX: stop relying on cachyos config
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 set -e GTK_IM_MODULE
@@ -15,6 +16,8 @@ end
 set -Ux CC clang
 set -Ux CXX clang++
 
-set -gx PATH $PATH /home/flave/.local/bin
+# TODO: duplicate path when sourced multiple times
+set -gx PATH $PATH ~/.local/bin
+set -gx PATH $PATH ~/odin
 
 alias maj='paru -Syu --ask 999 && flatpak update'
