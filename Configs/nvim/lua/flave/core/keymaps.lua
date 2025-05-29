@@ -50,11 +50,14 @@ km.set('n', '<leader>q', ':q<CR>', { desc = "Quit current buffer"});
 
 -- window management
 -- km.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-km.set("n", "<C-w>h", ":sp", { desc = "Split window horizontally" })
+-- km.set("n", "<C-w>h", ":sp", { desc = "Split window horizontally" })
 km.set("n", "<C-Left>", "<C-w>h", { desc = "Move to left window" })
 km.set("n", "<C-Right>", "<C-w>l", { desc = "Move to right window" })
 km.set("n", "<C-Up>", "<C-w>k", { desc = "Move to up window" })
 km.set("n", "<C-Down>", "<C-w>j", { desc = "Move to down window" })
+
+km.set("n", "<S-Left>", ":tabprevious<CR>", { desc = "Move to left window" })
+km.set("n", "<S-Right>",":tabnext<CR>", { desc = "Move to right window" })
 
 km.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Back to normal mode from terminal mode" })
 
